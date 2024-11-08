@@ -9,7 +9,7 @@ def func(n):
     for i in range(0, n+1):
        res+=(n**i)/fact(i)
     return res
-print(func(6))
+
 
 def print_message():
   print('Hello from github')
