@@ -5,7 +5,7 @@ import os
 
 def yt_downloader(url):
     yt = YouTube(url, on_progress_callback=on_progress)
-    output_path = r'C:\Users\HOME\PycharmProjects\TelegramBotpythonProject\yt_audios'
+    output_path = 'yt_audios'
     ys = yt.streams.get_audio_only()
     ys.download(output_path=output_path)
     for filename in os.listdir(output_path):
