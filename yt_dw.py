@@ -2,7 +2,6 @@ from pytubefix import YouTube
 from pytubefix.cli import on_progress
 import re
 import os
-
 def yt_downloader(url):
     yt = YouTube(url, on_progress_callback=on_progress)
     output_path = 'yt_audios'
@@ -12,12 +11,6 @@ def yt_downloader(url):
         if filename.endswith('.m4a'):
             new_path_file='1.m4a'
             os.rename(f'{output_path}/{filename}',f'{output_path}/{new_path_file}')
-
-
-
-
-
-
 
 def get_name(url):
     title=YouTube(url).title

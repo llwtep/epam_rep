@@ -1,9 +1,6 @@
 from pytubefix import Playlist
 from pytubefix.cli import on_progress
 import os
-
-
-
 def playlist_downloader(url):
     pl=Playlist(url)
     video_title=[]
