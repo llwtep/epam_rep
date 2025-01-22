@@ -1,32 +1,20 @@
-from pytubefix import YouTube
-from pytubefix.cli import on_progress
-import re
-import os
-def yt_downloader(url):
-    yt = YouTube(url, on_progress_callback=on_progress)
-    output_path = 'yt_audios'
-    ys = yt.streams.get_audio_only()
-    ys.download(output_path=output_path)
-    for filename in os.listdir(output_path):
-        if filename.endswith('.m4a'):
-            new_path_file='1.m4a'
-            os.rename(f'{output_path}/{filename}',f'{output_path}/{new_path_file}')
-
-def get_name(url):
-    title=YouTube(url).title
-    title = re.sub(r'[\\/*?:"<>|]', "_", title)
-    return title
+import yt_dlp
 
 
 
-
-
-
-
-
-
-
-
+def yt_downloader(url: str):
+    opts = {
+        'outtmpl': "yt_audios/%(title)s.%(ext)s",
+        'format': 'bestaudio[ext=m4a]',
+    }
+    try:
+        with yt_dlp.YoutubeDL(opts) as ydl:
+            info_dict = ydl.extract_info(url, download=False)
+            filename = ydl.prepare_filename(info_dict)
+            ydl.download([url])
+            return filename
+    except Exception as e:
+        print(str(e))
 
 
 
