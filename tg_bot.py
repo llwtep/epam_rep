@@ -7,10 +7,7 @@ bot = telebot.TeleBot('7392391807:AAF7E1AYfhuRy69NzSYoxbtjyJm4UWHaZ0w')
 incorrect_input = False
 
 
-# nigger
-# CAACAgIAAxkBAAIDYGeRKgQgTJJEv7dedKHlW8Tx9QY-AAIiEwAChYUQSJPY5p3ou07XNgQ
-# dima bilan
-# CAACAgIAAxkBAAIDYWeRKiXuUAwDp2zEr_1Ug9m8A6spAAJyXQACo8UgSEGybLPw-uN1NgQ
+
 @bot.message_handler(commands=['start'])
 def main(message):
     bot.send_message(message.chat.id, f'Привет {message.from_user.first_name}!')
@@ -59,7 +56,7 @@ def main2(message):
             bot.send_message(message.chat.id, 'Eбать ты додик бля')
             bot.send_sticker(message.chat.id, stiker_id)
         else:
-            bot.send_message(message.chat.id, 'Я сказал ссылку с ютуба, не позорься:)')
+            bot.send_message(message.chat.id, 'Cсылку с ютуба кинь')
 
             incorrect_input = True
 
