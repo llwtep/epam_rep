@@ -2,3 +2,5 @@
 repository for educational purposes
 sont.txt
 venv
+__pycache__/
+*.py[cod]
