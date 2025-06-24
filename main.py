@@ -2,11 +2,14 @@ import telebot
 import os
 from yt_dw import yt_downloader
 import re
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot('7392391807:AAF7E1AYfhuRy69NzSYoxbtjyJm4UWHaZ0w')
+load_dotenv()
+
+BOT_TOKEN=os.getenv("TELEGRAM_BOT_TOKEN")
+
+bot = telebot.TeleBot(BOT_TOKEN)
 incorrect_input = False
-
-
 
 @bot.message_handler(commands=['start'])
 def main(message):

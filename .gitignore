@@ -4,3 +4,4 @@ sont.txt
 venv
 __pycache__/
 *.py[cod]
+.env
